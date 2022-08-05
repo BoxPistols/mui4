@@ -3,5 +3,14 @@
     "activityBar.background": "#40204B",
     "titleBar.activeBackground": "#5A2D6A",
     "titleBar.activeForeground": "#FDFCFE"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true
   }
 }
