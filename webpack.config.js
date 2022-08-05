@@ -1,3 +1,11 @@
 const path = require('path');
 
-module.exports = {};
+module.exports = {
+  mode,
+  entry,
+  output,
+  module,
+  devServer,
+  resolve,
+  target,
+};
