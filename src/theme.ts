@@ -2,6 +2,20 @@ import { createMuiTheme } from '@material-ui/core/styles'
 
 // サイトのベースとなる独自のテーマを作成する
 const theme = createMuiTheme({
+  overrides: {
+    MuiButton: {
+      root: {
+        fontSize: "14px",
+        lineHeight: 1.5,
+        padding: "12px",
+      },
+      containedPrimary: {
+        // backgroundColor: "#ff9999",
+        color: "#ff9999",
+      },
+    },
+  },
+
   palette: {
     primary: {
       main: '#1976d2',
