@@ -22,11 +22,21 @@
         elem.href = 'Style1.css'
       }
     </script>
+    <style>
+      body {
+        position: relative;
+      }
+      .pos {
+        position: fixed;
+        top: 0;
+        right: 0;
+      }
+    </style>
   </head>
 
   <body>
-    <div class="frame1">ABCDEFG</div>
-    <p>
+    <p class="pos">
+      <div class="frame1">ABCDEFG</div>
       <a href="javascript:changeStyleSheet();">Style2.css</a> /
       <a href="javascript:changeStyleSheet2();">Style1.css</a>
     </p>

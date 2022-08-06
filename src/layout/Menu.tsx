@@ -7,17 +7,16 @@ import ProductPage from '../components/pages/ProductPage'
 
 export const Menu: React.FC = () => {
   return (
-    <div className=''>
+    <>
       <BrowserRouter>
-        <div className='flex f-row f-jc-center'>
-          <Link to='/'>Home</Link> | <Link to='/productPage'>productPage</Link>
-        </div>
-
+        {/* <div className='flex f-row f-jc-center'> */}
+        {/* <Link to='/'>Home</Link> | <Link to='/products'>products</Link> */}
+        {/* </div> */}
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='productPage' element={<ProductPage />} />
+          <Route path='products' element={<ProductPage />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   )
 }

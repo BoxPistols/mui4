@@ -7,20 +7,20 @@ import { DarkToggle } from './components/DarkToggle'
 import { Menu } from './layout/Menu'
 import './index.scss'
 import { Container } from '@material-ui/core'
+// import GenericTemplate from './components/templates/GenericTemplate'
 
 ReactDOM.render(
   <>
-    <Container maxWidth='lg' className=''>
-      <DarkToggle>Dark/Light Toggle</DarkToggle>
-      <ThemeProvider theme={theme}>
+    <div className=''>
+      <App>
         <Menu />
-        <div className='flex f-center'>
-          <App>
-            <h1>Hello World!</h1>
-          </App>
-        </div>
-      </ThemeProvider>
-    </Container>
+        <DarkToggle>Dark/Light Toggle</DarkToggle>
+        {/* <h1>Hello World!</h1> */}
+        {/* <Container maxWidth='lg' className=''> */}
+        {/* <ThemeProvider theme={theme}></ThemeProvider> */}
+        {/* </Container> */}
+      </App>
+    </div>
   </>,
   document.getElementById('root')
 )
