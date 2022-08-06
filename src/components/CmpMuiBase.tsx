@@ -30,7 +30,9 @@ export const CmpMuiBase: React.FC<Props> = () => {
         <FavoriteIcon color='secondary' />
       </Typography>
       <Box m={4}>
-        <Typography variant='body1'>ここにコンテンツが入ります。</Typography>
+        <Typography variant='body1' color='primary'>
+          ここにコンテンツが入ります。
+        </Typography>
       </Box>
       <ButtonGroup color='primary' aria-label='outlined button group'>
         <Button variant='contained' color='primary'>

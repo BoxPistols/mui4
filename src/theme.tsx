@@ -10,7 +10,7 @@ const theme = createTheme({
         padding: '12px',
       },
       containedPrimary: {
-        // backgroundColor: "#ff9999",
+        backgroundColor: '#ff9999',
         color: '#f9f9f9',
       },
     },
@@ -18,7 +18,7 @@ const theme = createTheme({
 
   palette: {
     primary: {
-      main: '#1976d2',
+      main: '#9976d2',
     },
     secondary: {
       main: '#dc004e',

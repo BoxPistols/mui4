@@ -27,10 +27,10 @@ export const DarkToggle: FC<Props> = ({ children }) => {
 
   const theme = createTheme({
     palette: {
-      primary: {
-        main: colors.blue[800],
-      },
       type: darkMode ? 'dark' : 'light',
+      primary: {
+        main: darkMode ? colors.green[800] : colors.orange[300],
+      },
     },
   })
 
