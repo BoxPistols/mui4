@@ -1,4 +1,6 @@
-import React, { Children } from 'react'
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import FavoriteIcon from '@material-ui/icons/Favorite'
 import {
   Container,
   Box,
@@ -7,9 +9,6 @@ import {
   ButtonProps,
   ButtonGroup,
 } from '@material-ui/core'
-
-import { makeStyles, createStyles } from '@material-ui/core/styles'
-import FavoriteIcon from '@material-ui/icons/Favorite'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 type Props = React.ButtonHTMLAttributes<ButtonProps>
 
-export const CompMuiBase: React.FC<Props> = () => {
+export const CmpMuiBase: React.FC<Props> = () => {
   const classes = useStyles()
 
   return (

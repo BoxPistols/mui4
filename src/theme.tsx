@@ -1,17 +1,17 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createTheme } from '@material-ui/core/styles'
 
 // サイトのベースとなる独自のテーマを作成する
-const theme = createMuiTheme({
+const theme = createTheme({
   overrides: {
     MuiButton: {
       root: {
-        fontSize: "14px",
+        fontSize: '14px',
         lineHeight: 1.5,
-        padding: "12px",
+        padding: '12px',
       },
       containedPrimary: {
         // backgroundColor: "#ff9999",
-        color: "#ff9999",
+        color: '#f9f9f9',
       },
     },
   },
@@ -51,7 +51,7 @@ const theme = createMuiTheme({
     },
     button: {
       fontWeight: 600,
-    }
+    },
   },
 })
 
