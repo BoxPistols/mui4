@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createTheme } from '@material-ui/core/styles'
 import * as colors from '@material-ui/core/colors'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import { ThemeProvider } from '@material-ui/styles'
@@ -23,9 +23,28 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 
-const drawerWidth = 240
+const drawerWidth = 210
 
-const theme = createMuiTheme({
+const theme = createTheme({
+  overrides: {
+    MuiTypography: {
+      root: {
+        color: '#f9f9f9',
+      },
+    },
+    MuiButton: {
+      root: {
+        fontSize: '14px',
+        lineHeight: 1.5,
+        padding: '12px',
+      },
+      containedPrimary: {
+        backgroundColor: '#ff9999',
+        color: '#f9f9f9',
+      },
+    },
+  },
+
   typography: {
     fontFamily: [
       'Noto Sans JP',
@@ -44,6 +63,8 @@ const theme = createMuiTheme({
     ].join(','),
   },
   palette: {
+    type: 'dark',
+
     primary: { main: colors.blue[800] }, // テーマの色
   },
 })
@@ -52,6 +73,8 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: 'flex',
+      // color: theme.palette.text.primary,
+      // color: '#fffafa',
     },
     toolbar: {
       paddingRight: 24,
