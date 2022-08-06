@@ -4,7 +4,6 @@ import { App } from './App'
 import { ThemeProvider } from '@material-ui/core/styles'
 import theme from './theme'
 import { DarkToggle } from './components/DarkToggle'
-
 import './index.scss'
 
 ReactDOM.render(
