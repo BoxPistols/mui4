@@ -6,18 +6,21 @@ import theme from './theme'
 import { DarkToggle } from './components/DarkToggle'
 import { Menu } from './layout/Menu'
 import './index.scss'
+import { Container } from '@material-ui/core'
 
 ReactDOM.render(
   <>
-    <ThemeProvider theme={theme}>
-      <Menu />
-      <div className='flex f-center'>
-        <h1>Hello World!</h1>
-        <App>
-          <DarkToggle>Dark/Light Toggle</DarkToggle>
-        </App>
-      </div>
-    </ThemeProvider>
+    <Container maxWidth='lg' className=''>
+      <DarkToggle>Dark/Light Toggle</DarkToggle>
+      <ThemeProvider theme={theme}>
+        <Menu />
+        <div className='flex f-center'>
+          <App>
+            <h1>Hello World!</h1>
+          </App>
+        </div>
+      </ThemeProvider>
+    </Container>
   </>,
   document.getElementById('root')
 )
