@@ -1,11 +1,33 @@
-import React from 'react'
-import { CmpMuiBase } from './components/CmpMuiBase'
+import React, { ReactNode } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
 
-export const App: React.FC = () => {
+import {
+  Container,
+  Box,
+  Typography,
+  Button,
+  ButtonProps,
+  ButtonGroup,
+} from '@material-ui/core'
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+  },
+}))
+
+interface Props {
+  children: ReactNode
+}
+
+export const App: React.FC<Props> = ({ children }) => {
+  const classes = useStyles()
   return (
     <>
-      <h1>Hello World!</h1>
-      <CmpMuiBase />
+      <Container maxWidth='lg' className={classes.root}>
+        {children}
+      </Container>
     </>
   )
 }

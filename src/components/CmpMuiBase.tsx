@@ -12,7 +12,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(2),
+    // padding: theme.spacing(2),
     textAlign: 'center',
   },
 }))
@@ -23,25 +23,24 @@ export const CmpMuiBase: React.FC<Props> = () => {
   const classes = useStyles()
 
   return (
-    <Container maxWidth='lg' className={classes.root}>
-      <Typography variant='h1' component='h1'>
-        <FavoriteIcon color='secondary' />
-        Material UIも準備完了
-        <FavoriteIcon color='secondary' />
-      </Typography>
-      <Box m={4}>
+    <>
+      <Box m={4} className='flex f-center'>
+        <Typography variant='h1' component='h1'>
+          Material UIも準備完了
+          <FavoriteIcon color='secondary' />
+        </Typography>
         <Typography variant='body1' color='primary'>
           ここにコンテンツが入ります。
         </Typography>
+        <ButtonGroup color='primary' aria-label='outlined button group'>
+          <Button variant='contained' color='primary'>
+            Primary
+          </Button>
+          <Button variant='contained' color='secondary'>
+            Secondary
+          </Button>
+        </ButtonGroup>
       </Box>
-      <ButtonGroup color='primary' aria-label='outlined button group'>
-        <Button variant='contained' color='primary'>
-          Primary
-        </Button>
-        <Button variant='contained' color='secondary'>
-          Secondary
-        </Button>
-      </ButtonGroup>
-    </Container>
+    </>
   )
 }

@@ -1,3 +1,26 @@
-body{
+body {
   padding: 2vw;
 }
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-row {
+  flex-direction: row;
+}
+
+.f-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.f-ai-center {
+  align-items: center;
+}
+
+.f-jc-center {
+  justify-content: center;
+}
+
