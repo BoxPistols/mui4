@@ -5,12 +5,32 @@ import Brightness4Icon from '@material-ui/icons/Brightness4'
 import { createTheme, ThemeProvider } from '@material-ui/core/styles'
 import * as colors from '@material-ui/core/colors'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import { makeStyles } from '@material-ui/core/styles'
 
-interface Props {
-  children: ReactNode
+type Props = {
+  children?: ReactNode
+  title?: string
 }
 
-export const DarkToggle: FC<Props> = ({ children }) => {
+// Styles
+const useStyles = makeStyles((theme) => ({
+  root: {
+    fontSize: '14px',
+  },
+  toggleArea: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    backgroundColor: '#666',
+    width: '100%',
+    '&.MuiIconButton-root': {
+      borderRadius: '0%',
+    },
+  },
+}))
+
+export const DarkToggle: FC<Props> = ({ children, title }) => {
+  const classes = useStyles()
+
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem('darkMode') === 'on' ? true : false
   )
@@ -38,13 +58,23 @@ export const DarkToggle: FC<Props> = ({ children }) => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       {darkMode ? (
-        <IconButton color='inherit' onClick={handleDarkModeOff}>
-          <Brightness7Icon />
-        </IconButton>
+        <>
+          <div className={classes.toggleArea}>
+            <IconButton color='inherit' onClick={handleDarkModeOff}>
+              <Brightness7Icon />
+            </IconButton>
+            <div className={classes.root}>{title}</div>
+          </div>
+        </>
       ) : (
-        <IconButton color='inherit' onClick={handleDarkModeOn}>
-          <Brightness4Icon />
-        </IconButton>
+        <>
+          <div className={classes.toggleArea}>
+            <IconButton color='inherit' onClick={handleDarkModeOn}>
+              <Brightness4Icon />
+            </IconButton>
+            <div className={classes.root}>{title}</div>
+          </div>
+        </>
       )}
       {children}
     </ThemeProvider>

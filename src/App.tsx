@@ -1,4 +1,5 @@
 import React, { useState, useEffect, ReactNode } from 'react'
+import { DarkToggle } from './components/DarkToggle'
 import { makeStyles } from '@material-ui/core/styles'
 // import design from './util/design'
 
@@ -28,5 +29,10 @@ export const App: React.FC<Props> = ({ children }) => {
   //     })
   // }, [])
 
-  return <>{children}</>
+  return (
+    <>
+      <DarkToggle title='Dark toggle' />
+      {children}
+    </>
+  )
 }
