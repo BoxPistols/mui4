@@ -23,6 +23,11 @@ interface Props {
 
 export const App: React.FC<Props> = ({ children }) => {
   const classes = useStyles()
+
+  // const apiKey = process.env
+  // console.log('apiKey' + apiKey)
+  console.log(process.env.HOGE)
+
   return (
     <>
       {/* <Container maxWidth='lg' className={classes.root}> */}
