@@ -1,46 +1,45 @@
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" lang="ja" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>webpack × React × TypeScript + mui4</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link id="PageStyleSheet" rel="stylesheet" href="Style1.css" />
-    <script type="text/javascript">
-      const elem = document.getElementById('PageStyleSheet')
-      function changeStyleSheet() {
-        elem.href = 'Style2.css'
-      }
-      function changeStyleSheet2() {
-        elem.href = 'Style1.css'
-      }
-    </script>
-    <style>
-      body {
-        position: relative;
-      }
-      .pos {
-        position: fixed;
-        top: 0;
-        right: 0;
-      }
-    </style>
-  </head>
 
-  <body>
-    <p class="pos">
-      <div class="frame1">ABCDEFG</div>
-      <a href="javascript:changeStyleSheet();">Style2.css</a> /
-      <a href="javascript:changeStyleSheet2();">Style1.css</a>
-    </p>
-    <div id="root"></div>
-    <script defer src="main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" lang="ja" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>webpack × React × TypeScript + mui4</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link id="PageStyleSheet" rel="stylesheet" href="Style1.css" />
+  <script type="text/javascript">
+    const elem = document.getElementById('PageStyleSheet')
+    function changeStyleSheet() {
+      elem.href = 'Style2.css'
+    }
+    function changeStyleSheet2() {
+      elem.href = 'Style1.css'
+    }
+  </script>
+  <style>
+    body {
+      position: relative;
+    }
+
+    .pos {
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      right: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="pos">
+  <div class="frame1">ABCDEFG</div>
+  <a href="javascript:changeStyleSheet();">Style2.css</a> /
+  <a href="javascript:changeStyleSheet2();">Style1.css</a>
+  </p>
+  <div id="root"></div>
+  <script defer src="main.js"></script>
+</body>
+
 </html>
