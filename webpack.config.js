@@ -1,4 +1,6 @@
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
+const enviroment = process.env.NODE_ENV || 'dev'
 
 module.exports = {
   mode: 'development',
@@ -41,4 +43,38 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
   target: 'web',
+  plugins: [
+    new Dotenv({
+      // path: path.resolve(__dirname, `.env.${enviroment}`),
+      path: path.resolve(__dirname, `.env`),
+    }),
+  ],
 }
+
+/**
+@INuild時に環境に応じた.env を読み込ませたい](https://chaika.hattry/2020/10/03/160000)
+
+dotラグインを使えば .env ファイルを webpack を通じてプログラムに渡すこなので、 ビルドのモードに応じて読み込ませる .env ファイルを変更すれば OK
+
+web
+  crequire('dotenv-webpack');
+  ct = process.env.NODE_ENV || 'dev';
+
+  module.exports = {
+    plugins: [
+      new Dotenv({
+        path: path.resolve(__dirname, `.env.${enviroment}`),
+      }),
+    ],
+  }
+
+npm-script
+  "scripts": {
+    "build": "NODE_ENV=prod webpack --config ./webpack/config.js",
+    "build:dev": "NODE_ENV=dev webpack --config ./webpack.config.js",
+  }
+dotenv-webpack プラグインで渡される .env ファイルはプログラム内では process.env からアクセスすることができます。
+npm run build の場合は .env が
+npm run build:dev の場合は .env.dev が、
+それぞれ読み込まれてビルドできるようになりました ✨
+*/
