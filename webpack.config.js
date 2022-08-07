@@ -38,7 +38,10 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    port: 3000,
+    // port: 3000 || process.env.PORT,
+    // port: process.env.PORT,
+    port: 8282 || process.env.PORT ? process.env.PORT : 3000,
+    // open: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
