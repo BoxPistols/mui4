@@ -1,4 +1,4 @@
-export default function getApi() {
+export default function design() {
   const apiKey = process.env.theme ? process.env.theme : undefined
   apiKey && console.log(`Using theme: ${apiKey}`)
   if (!apiKey) {

@@ -5,11 +5,12 @@ const enviroment = process.env.NODE_ENV || 'dev'
 module.exports = {
   mode: 'development',
   entry: './src/index.tsx',
-  entry: './src/index.tsx',
+
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'main.js',
   },
+
   module: {
     rules: [
       {

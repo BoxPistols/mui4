@@ -1,41 +1,51 @@
 import React, { useState, useEffect, ReactNode } from 'react'
-import getApi from '../../util/getApi'
-
+import design from '../../util/design'
 import GenericTemplate from '../templates/GenericTemplate'
+import { makeStyles } from '@material-ui/core/styles'
 
-console.log(getApi())
+console.log(design())
+console.log(design().color)
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    // color: '#fb5599',
+    color: design().color,
+  },
+}))
 
 const HomePage: React.FC = () => {
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    fetch(getApi(), { method: 'GET' })
+    fetch(design(), { method: 'GET' })
       .then((res) => res.json())
       .then((data) => {
         setPosts(data)
-        console.log(JSON.parse(data))
-        console.log(data)
+        console.log(JSON.parse(data.color))
+        console.log(data.color)
       })
   }, [])
 
+  const classes = useStyles()
+
   return (
     <>
-      {/* <div className='flex f-center'> */}
-      <GenericTemplate title='トップページ'>
-        <h2>トップページ内容</h2>
-        col
-        <ul>
-          {posts.map((post) => (
-            <li key={post.index}>color: {JSON.parse(post.color)}</li>
-          ))}
-        </ul>
-        <ul>
-          {posts.map((post) => (
-            <li key={post.index}>{post.color}XXXX</li>
-          ))}
-        </ul>
-      </GenericTemplate>
-      {/* <CmpMuiBase /> */}
-      {/* </div> */}
+      <div className={classes.root}>
+        <GenericTemplate title='トップページ'>
+          <h2>トップページ内容</h2>
+          col
+          {design().color}
+          <ul>
+            {posts.map((post) => (
+              <li key={post.index}>color: {JSON.parse(post.color)}</li>
+            ))}
+          </ul>
+          <ul>
+            {posts.map((post) => (
+              <li key={post.index}>{post.color}XXXX</li>
+            ))}
+          </ul>
+        </GenericTemplate>
+      </div>
     </>
   )
 }
