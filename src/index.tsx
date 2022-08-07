@@ -11,16 +11,13 @@ import { Container } from '@material-ui/core'
 
 ReactDOM.render(
   <>
-    <div className=''>
-      <App>
-        <Menu />
-        <DarkToggle>Dark/Light Toggle</DarkToggle>
-        {/* <h1>Hello World!</h1> */}
-        {/* <Container maxWidth='lg' className=''> */}
-        {/* <ThemeProvider theme={theme}></ThemeProvider> */}
-        {/* </Container> */}
-      </App>
-    </div>
+    <App>
+      <Menu />
+      <DarkToggle>Dark/Light Toggle</DarkToggle>
+      {/* <h1>Hello World!</h1> */}
+      {/* <Container maxWidth='lg' className=''> */}
+      {/* <ThemeProvider theme={theme}></ThemeProvider> */}
+    </App>
   </>,
   document.getElementById('root')
 )

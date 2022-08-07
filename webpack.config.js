@@ -46,7 +46,7 @@ module.exports = {
   plugins: [
     new Dotenv({
       // path: path.resolve(__dirname, `.env.${enviroment}`),
-      path: path.resolve(__dirname, `.env`),
+      path: enviroment === process.env.NODE_ENV ? './.env.dev' : './.env',
     }),
   ],
 }
